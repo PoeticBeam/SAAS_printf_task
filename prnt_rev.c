@@ -29,10 +29,9 @@ int prnt_rev(va_list typ, char buffer[],
 	{
 		UNUSED(accuracy);
 
-		str = "(null);
+		str = "(null)";
 	}
-	for (x = 0; str[x]; x++)
-		;
+	for (x = 0; str[x]; x++);
 
 	for (x = x - 1; x >= 0; x--)
 	{

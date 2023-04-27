@@ -17,7 +17,7 @@
 int prnt_the_not_printable(va_list typ, char buffer[],
 	int flag, int width, int accuracy, int size)
 {
-	int x = 0,
+	int x = 0;
 	int char_offset = 0;
 	char *str = va_arg(typ, char *);
 

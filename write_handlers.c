@@ -25,7 +25,7 @@ int write_char_handler(char k, char buffer[],
 		padding = '0';
 
 	buffer[ii++] = k;
-	buffer[i] = '\0';
+	buffer[ii] = '\0';
 
 	if (width > 1)
 	{

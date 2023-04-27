@@ -35,22 +35,22 @@ int prnt_inrot13(va_list typ, char buffer[],
 
 	if (str == NULL)
 		str = "(AHYY)";
-	for (x = 0; str[x]; x++)
+	for (a = 0; str[a]; a++)
 	{
 		for (b = 0; input[b]; b++)
 		{
 			if (input[b] == str[a])
 			{
-				z = output[b];
-				write(1, &z, 1);
+				x = output[b];
+				write(1, &x, 1);
 				count++;
 				break;
 			}
 		}
 		if (!input[b])
 		{
-			z = str[x];
-			write(1, &z, 1);
+			x = str[a];
+			write(1, &x, 1);
 			count++;
 		}
 	}

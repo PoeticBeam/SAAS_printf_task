@@ -20,7 +20,7 @@ int handle_print(const char *frmt, int *ind, va_list list, char buffer[],
 		{'c', prnt_char}, {'s', prnt_str}, {'%', prnt_prcent},
 		{'i', prnt_integer}, {'d', prnt_integer}, {'b', prnt_binary},
 		{'u', prnt_unsgnd}, {'o', prnt_oktal}, {'x', prnt_hexadec},
-		{'X', prnt_hexadec_upper}, {'p', prnt_ptr}, {'S', prnt__the_not_printable},
+		{'X', prnt_hexadec_upper}, {'p', prnt_ptr}, {'S', prnt_the_not_printable},
 		{'r', prnt_rev}, {'R', prnt_inrot13}, {'\0', NULL}
 	};
 	for (ii = 0; frmt_typ[ii].frmt != '\0'; ii++)

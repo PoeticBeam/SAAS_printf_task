@@ -17,9 +17,9 @@ int prnt_ptr(va_list typ, char buffer[],
 	int flag, int width, int accuracy, int size)
 {
 	char xtra_char = 0, padding = ' ';
-	int ind = BUFFER - 2, len = 2, padding_start = 1;
+	int ind = BUFFER - 2, leng = 2, padding_start = 1;
 	/*
-	 * len = 2, pre-formatting for lower case hexadecimal '0x'
+	 * leng = 2, pre-formatting for lower case hexadecimal '0x'
 	 */
 	unsigned long number_address;
 	char mapsto[] = "0123456789abcdef";
@@ -38,14 +38,14 @@ int prnt_ptr(va_list typ, char buffer[],
 	{
 		buffer[ind--] = mapsto[number_address % 16];
 		number_address /= 16;
-		len++;
+		leng++;
 	}
 	if ((flag & FL_0) && !(flag & FL_MINUS))
 		padding = '0';
-	if (flag & Fl_PLUS)
-		xtra_char = '+', len++;
+	if (flag & FL_PLUS)
+		xtra_char = '+', leng++;
 	else if (flag & FL_SPACE)
-		xtra_char = ' ', len++;
+		xtra_char = ' ', leng++;
 	ind++;
 
 	/*

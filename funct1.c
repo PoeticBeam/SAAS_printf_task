@@ -15,7 +15,7 @@ int prnt_unsgnd(va_list typ, char buffer[],
 		int flag, int width, int accuracy, int size)
 {
 	int ii = BUFFER - 2;
-	unsigned long int n = va_arg(types, unsigned long int);
+	unsigned long int n = va_arg(typ, unsigned long int);
 
 	n = size_unsigned_conversion(n, size);
 
@@ -69,7 +69,7 @@ int prnt_oktal(va_list typ, char buffer[],
 		n /= 8;
 	}
 
-	if (flag & F_HASHTAG && init_n != 0)
+	if (flag & FL_HASHTAG && init_n != 0)
 		buffer[ii--] = '0';
 
 	ii++;
@@ -130,7 +130,7 @@ int prnt_hexadec_upper(va_list typ, char buffer[],
 int prnt_hexa(va_list typ, char map_to[], char buffer[],
 		int flag, char flag_chter, int width, int accuracy, int size)
 {
-	int i = BUFFER - 2;
+	int ii = BUFFER - 2;
 	unsigned long int n = va_arg(typ, unsigned long int);
 	unsigned long int init_n = n;
 
@@ -157,6 +157,5 @@ int prnt_hexa(va_list typ, char map_to[], char buffer[],
 
 	ii++;
 
-	return (write_unsgnd(0, i, buffer, flag, width, accuracy, size));
+	return (write_unsgnd(0, ii, buffer, flag, width, accuracy, size));
 }
-

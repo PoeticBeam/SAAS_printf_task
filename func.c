@@ -2,14 +2,14 @@
 
 /**
  * prnt_char - this function prints a character
- * @typ: this contains the arguments to function
- * @buffer: memory buffer takes in characters
- * @flag:  checks for available defined flags
- * @width: Width
- * @accuracy: level of accuracy required in int
- * @size: specifies the size
+ * @typ: this contains the arguments to function
+ * @buffer: memory buffer takes in characters
+ * @flag:  checks for available defined flags
+ * @width: Width
+ * @accuracy: level of accuracy required in int
+ * @size: specifies the size
  *
- * Return: returns the number of the characters present
+ * Return: returns the number of the characters present
  */
 
 int prnt_char(va_list typ, char buffer[],
@@ -22,13 +22,13 @@ int prnt_char(va_list typ, char buffer[],
 
 /**
  * prnt_str - this function will print a string
- * @typ: all arguments to function
- * @buffer: memory takes in string
- * @flag:  checks flag specifiers in string
- * @width: get width.
- * @accuracy: accuracy specifier
- * @size: indicates size
- * Return: returns the exact number of characters printed
+ * @typ: all arguments to function
+ * @buffer: memory takes in string
+ * @flag:  checks flag specifiers in string
+ * @width: get width.
+ * @accuracy: accuracy specifier
+ * @size: indicates size
+ * Return: returns the exact number of characters printed
  */
 
 int prnt_str(va_list typ, char buffer[],
@@ -47,7 +47,7 @@ int prnt_str(va_list typ, char buffer[],
 	{
 		str = "(null)";
 		if (accuracy >= 6)
-			str = "      ";
+			str = "      ";
 	}
 
 	while (str[l] != '\0')
@@ -65,10 +65,10 @@ int prnt_str(va_list typ, char buffer[],
 		}
 		else
 		{
-		for (x = width - l; x > 0; x--)
-			write(1, " ", 1);
-		write(1, &str[0], l);
-		return (width);
+			for (x = width - l; x > 0; x--)
+				write(1, " ", 1);
+			write(1, &str[0], l);
+			return (width);
 		}
 	}
 	return (write(1, str, l));
@@ -77,18 +77,18 @@ int prnt_str(va_list typ, char buffer[],
 
 /**
  * prnt_prcent - this function will print the percent sign
- * @typ: all arguments to function
- * @buffer: memory storage for characters/strings
- * @flag:  checks available flag specifiers
- * @width: accepts width
- * @accuracy: accuracy
- * @size: size
+ * @typ: all arguments to function
+ * @buffer: memory storage for characters/strings
+ * @flag:  checks available flag specifiers
+ * @width: accepts width
+ * @accuracy: accuracy
+ * @size: size
  *
- * Return: returns the number of characters printed
+ * Return: returns the number of characters printed
  */
 
 int prnt_percent(va_list typ, char buffer[],
-        int flag, int width, int accuracy, int size)
+		int flag, int width, int accuracy, int size)
 {
 
 	UNUSED(typ);
@@ -103,18 +103,18 @@ int prnt_percent(va_list typ, char buffer[],
 
 /**
  * prnt_int - checks and prints integers
- * @typ: arguments to function
- * @buffer: memory space stores integers
- * @flag:  Checks flag specifier for integer
- * @width: get width.
- * @accuracy: accuracy
- * @size: size
+ * @typ: arguments to function
+ * @buffer: memory space stores integers
+ * @flag:  Checks flag specifier for integer
+ * @width: get width.
+ * @accuracy: accuracy
+ * @size: size
  *
- * Return: returns the number of integers printed
+ * Return: returns the number of integers printed
  */
 
 int prnt_integer(va_list typ, char buffer[],
-        int flag, int width, int accuracy, int size)
+		int flag, int width, int accuracy, int size)
 {
 	int x = BUFFER - 2;
 	int negative = 0;
@@ -144,18 +144,18 @@ int prnt_integer(va_list typ, char buffer[],
 
 /**
  * prnt_binary - function prints the binary
- * @typ: arguments to function
- * @buffer: memory space stores
- * @flag:  checks available flag specifiers
- * @width: width
- * @accuracy: accuracy
+ * @typ: arguments to function
+ * @buffer: memory space stores
+ * @flag:  checks available flag specifiers
+ * @width: width
+ * @accuracy: accuracy
  * @size: Size specifier
  *
  * Return: returns number of characters that were printed
  */
 
 int prnt_binary(va_list typ, char buffer[],
-	int flag, int width, int accuracy, int size)
+		int flag, int width, int accuracy, int size)
 {
 	unsigned int b, c, x, _sum;
 	unsigned int ary[32];
