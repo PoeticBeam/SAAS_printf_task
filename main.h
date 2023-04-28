@@ -52,7 +52,7 @@ int prnt_char(va_list typ, char buffer[],
 		int flag, int width, int accuracy, int size);
 int prnt_str(va_list typ, char buffer[],
 		int flag, int width, int accuracy, int size);
-int prnt_prcent(va_list typ, char buffer[],
+int prnt_percent(va_list typ, char buffer[],
 		int flag, int width, int accuracy, int size);
 
 /* These functions print numbers */
